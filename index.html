@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JRB BFCM 2026 — Offer Overview</title>
+<style>
+/* JRB Internal Dashboard Design System — tokens + doc components */
+@font-face{font-family:'Canela';src:url('https://jrb-fonts-cdn.vercel.app/fonts/Canela-Light.otf') format('opentype');font-weight:300;font-style:normal;font-display:swap;}
+@font-face{font-family:'Canela';src:url('https://jrb-fonts-cdn.vercel.app/fonts/Canela-LightItalic.otf') format('opentype');font-weight:300;font-style:italic;font-display:swap;}
+@font-face{font-family:'ArticulatCF';src:url('https://jrb-fonts-cdn.vercel.app/fonts/ArticulatCF-Regular.otf') format('opentype');font-weight:400;font-style:normal;font-display:swap;}
+@font-face{font-family:'ArticulatCF';src:url('https://jrb-fonts-cdn.vercel.app/fonts/ArticulatCF-Medium.otf') format('opentype');font-weight:500;font-style:normal;font-display:swap;}
+@font-face{font-family:'ArticulatCF';src:url('https://jrb-email-assets.vercel.app/fonts/articulatcf-demibold.woff2') format('woff2');font-weight:600;font-style:normal;font-display:swap;}
+@font-face{font-family:'ArticulatCF';src:url('https://jrb-fonts-cdn.vercel.app/fonts/ArticulatCF-Bold.otf') format('opentype');font-weight:700;font-style:normal;font-display:swap;}
+
+:root {
+  --jrb-cream:  #F5EFE6;
+  --jrb-paper:  #FAF7F2;
+  --jrb-ink:    #1B1B1B;
+  --jrb-forest: #20344E;
+  --jrb-moss:   #355C78;
+  --jrb-sage:   #6E8CA8;
+  --jrb-gold:   #2E8C9E;
+  --jrb-stone:  #6E6960;
+  --jrb-ash:    #C9C2B5;
+  --jrb-line:   #E4DDD0;
+  --jrb-soft:   #EEEAE0;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: var(--jrb-paper); color: var(--jrb-ink); font-family: 'ArticulatCF', sans-serif; -webkit-font-smoothing: antialiased; }
+body { padding: 48px 56px 96px; max-width: 1120px; margin: 0 auto; }
+
+/* HEADER */
+.header { display: flex; justify-content: space-between; align-items: flex-end; padding-bottom: 24px; border-bottom: 1px solid var(--jrb-line); margin-bottom: 36px; gap: 24px; }
+.eyebrow { font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--jrb-stone); font-weight: 500; margin-bottom: 8px; }
+h1 { font-family: 'Canela', serif; font-weight: 500; font-size: 40px; line-height: 1.1; color: var(--jrb-forest); letter-spacing: -0.01em; }
+.subtitle { color: var(--jrb-stone); font-size: 14px; margin-top: 12px; max-width: 620px; line-height: 1.5; }
+.last-updated { font-size: 10px; color: var(--jrb-stone); letter-spacing: 0.12em; text-transform: uppercase; white-space: nowrap; }
+
+/* SECTIONS */
+.section { margin-bottom: 0; padding-top: 44px; border-top: 1px solid var(--jrb-line); padding-bottom: 44px; }
+.section:first-of-type { border-top: 0; padding-top: 0; }
+.section-title { font-family: 'Canela', serif; font-size: 30px; font-weight: 500; color: var(--jrb-forest); margin-bottom: 4px; line-height: 1.15; }
+.section-sub { font-size: 13px; color: var(--jrb-stone); margin-bottom: 24px; }
+
+/* OFFER CARDS */
+.offer-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.offer-card { background: var(--jrb-paper); border: 1px solid var(--jrb-line); border-radius: 8px; padding: 26px 28px 28px; display: flex; flex-direction: column; }
+.offer-card .phase-label { font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--jrb-gold); font-weight: 700; margin-bottom: 10px; }
+.offer-card h3 { font-family: 'Canela', serif; font-size: 24px; font-weight: 500; color: var(--jrb-forest); margin-bottom: 4px; line-height: 1.2; }
+.offer-dates { font-size: 12px; color: var(--jrb-stone); letter-spacing: 0.06em; text-transform: uppercase; font-weight: 600; margin-bottom: 18px; }
+.offer-tiers { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
+.tier-row { display: flex; align-items: baseline; gap: 12px; padding: 10px 14px; background: var(--jrb-cream); border-radius: 6px; }
+.tier-pct { font-family: 'ArticulatCF', sans-serif; font-size: 26px; font-weight: 600; color: var(--jrb-forest); line-height: 1; font-variant-numeric: tabular-nums; min-width: 74px; }
+.tier-desc { font-size: 13px; color: var(--jrb-ink); line-height: 1.4; }
+.offer-note { font-size: 12px; color: var(--jrb-stone); line-height: 1.55; margin-top: auto; padding-top: 8px; }
+.offer-note strong { color: var(--jrb-moss); font-weight: 600; }
+.exclusion-chip { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #B65A4E; background: rgba(182,90,78,0.10); border-radius: 4px; padding: 3px 9px; margin-bottom: 12px; align-self: flex-start; }
+.include-chip { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #15A85C; background: rgba(21,168,92,0.10); border-radius: 4px; padding: 3px 9px; margin-bottom: 12px; align-self: flex-start; }
+
+/* SUMMARY CALLOUT */
+.summary-card { background: var(--jrb-cream); padding: 22px 24px; border-radius: 4px; border-left: 3px solid var(--jrb-forest); margin-bottom: 28px; }
+.summary-card .label { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--jrb-stone); margin-bottom: 8px; font-weight: 600; }
+.summary-card p { font-size: 14px; line-height: 1.6; color: var(--jrb-ink); max-width: 860px; }
+.summary-card p + p { margin-top: 8px; }
+.summary-card strong { color: var(--jrb-forest); font-weight: 600; }
+
+/* TIMELINE */
+.timeline { position: relative; margin: 8px 0 4px; padding-left: 26px; }
+.timeline::before { content: ""; position: absolute; left: 7px; top: 8px; bottom: 8px; width: 2px; background: var(--jrb-line); }
+.tl-item { position: relative; padding: 0 0 26px 14px; }
+.tl-item:last-child { padding-bottom: 0; }
+.tl-item::before { content: ""; position: absolute; left: -26px; top: 5px; width: 12px; height: 12px; border-radius: 50%; background: var(--jrb-paper); border: 3px solid var(--jrb-sage); }
+.tl-item.key::before { border-color: var(--jrb-gold); background: var(--jrb-gold); }
+.tl-item.end::before { border-color: var(--jrb-forest); background: var(--jrb-forest); }
+.tl-date { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--jrb-stone); font-weight: 700; margin-bottom: 3px; }
+.tl-title { font-size: 16px; font-weight: 600; color: var(--jrb-forest); margin-bottom: 4px; }
+.tl-desc { font-size: 13px; color: var(--jrb-ink); line-height: 1.55; max-width: 720px; }
+.tl-desc .muted { color: var(--jrb-stone); }
+
+/* PHASE BAR */
+.phase-bar { display: grid; grid-template-columns: 13fr 1fr 32fr; gap: 6px; margin: 4px 0 30px; }
+.phase-seg { border-radius: 6px; padding: 12px 14px 13px; }
+.phase-seg .ps-name { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 3px; }
+.phase-seg .ps-dates { font-size: 11px; opacity: 0.85; }
+.phase-seg.sitewide { background: var(--jrb-forest); color: var(--jrb-paper); }
+.phase-seg.gap { background: var(--jrb-soft); color: var(--jrb-stone); display: flex; align-items: center; justify-content: center; font-size: 14px; }
+.phase-seg.bundles { background: var(--jrb-gold); color: #fff; }
+.phase-overlay-note { font-size: 12px; color: var(--jrb-stone); margin-top: -20px; margin-bottom: 30px; line-height: 1.5; }
+
+/* REFERENCE TABLE */
+.pacing-card { background: var(--jrb-paper); border: 1px solid var(--jrb-line); border-radius: 8px; padding: 20px 24px 22px; }
+.pacing-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.pacing-table thead th { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--jrb-stone); font-weight: 600; padding: 8px 14px 10px; border-bottom: 1px solid var(--jrb-line); text-align: left; }
+.pacing-table tbody td { padding: 12px 14px; border-bottom: 1px solid var(--jrb-line); text-align: left; vertical-align: top; line-height: 1.5; }
+.pacing-table tbody tr:last-child td { border-bottom: 0; }
+.pacing-table tbody tr:hover { background: var(--jrb-cream); }
+.pacing-table td.t-window { white-space: nowrap; font-weight: 600; color: var(--jrb-forest); }
+.pacing-table td .cell-sub { display: block; font-size: 12px; color: var(--jrb-stone); font-weight: 400; margin-top: 2px; }
+.yes { color: #15A85C; font-weight: 700; }
+.no { color: #B65A4E; font-weight: 700; }
+.bundle-pill { display: inline-block; padding: 2px 9px; border-radius: 100px; font-size: 12px; font-weight: 600; background: rgba(46,140,158,0.12); color: var(--jrb-gold); white-space: nowrap; }
+
+/* FINE PRINT LIST */
+.fine-list { list-style: none; display: flex; flex-direction: column; gap: 12px; max-width: 860px; }
+.fine-list li { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; line-height: 1.55; color: var(--jrb-ink); }
+.fine-list .dot { flex: none; width: 7px; height: 7px; border-radius: 50%; background: var(--jrb-gold); margin-top: 7px; }
+.fine-list strong { font-weight: 600; color: var(--jrb-forest); }
+
+footer { margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--jrb-line); font-size: 12px; color: var(--jrb-stone); line-height: 1.6; }
+footer strong { color: var(--jrb-moss); font-weight: 600; letter-spacing: 0.04em; }
+
+@media (max-width: 860px) {
+  body { padding: 32px 22px 72px; }
+  .offer-grid { grid-template-columns: 1fr; }
+  .phase-bar { grid-template-columns: 1fr; }
+  .header { flex-direction: column; align-items: flex-start; }
+}
+@media (max-width: 570px) {
+  body { padding: 24px 16px 56px; }
+  h1 { font-size: 30px; }
+  .section-title { font-size: 24px; }
+  .tier-pct { font-size: 22px; min-width: 62px; }
+  .pacing-card { padding: 14px 12px 16px; overflow-x: auto; }
+  .pacing-table { min-width: 560px; }
+  .timeline { padding-left: 22px; }
+}
+@media print {
+  body { padding: 24px 28px; max-width: none; }
+  .section { page-break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div>
+    <div class="eyebrow">Jones Road Beauty · Internal</div>
+    <h1>BFCM 2026 Offer Overview</h1>
+    <div class="subtitle">The complete promotional structure for Black Friday / Cyber Week 2026 — sitewide sale mechanics, the limited-time Minis launch, and the Mini bundle savings that carry through end of year.</div>
+  </div>
+  <div class="last-updated">Updated Aug 10, 2026</div>
+</header>
+
+<!-- AT A GLANCE -->
+<section class="section">
+  <div class="summary-card">
+    <div class="label">At a Glance</div>
+    <p>The <strong>sitewide sale runs Tue 11/17 through Sun 11/29 at 11:59 PM</strong> — 15% off everything, upgraded to 20% off on orders of $100+, with <strong>Holiday Kits excluded</strong>.</p>
+    <p>On <strong>Black Friday (11/27)</strong> we introduce limited-time <strong>Minis</strong>, which count toward the sitewide discounts. On <strong>Cyber Monday (11/30)</strong> the sitewide sale is over and Minis shift to <strong>bundle pricing</strong> — 15% off a set of 3, 20% off a set of 5, 25% off a set of 7 — which stays live through <strong>12/31/26</strong>.</p>
+  </div>
+
+  <div class="phase-bar">
+    <div class="phase-seg sitewide">
+      <div class="ps-name">Sitewide Sale</div>
+      <div class="ps-dates">Nov 17 – Nov 29 · 15% / 20% $100+</div>
+    </div>
+    <div class="phase-seg gap" title="No gap — sale ends 11/29 at 11:59 PM, bundles begin 11/30">→</div>
+    <div class="phase-seg bundles">
+      <div class="ps-name">Mini Bundle Savings</div>
+      <div class="ps-dates">Nov 30 – Dec 31 · 15% / 20% / 25% by set size</div>
+    </div>
+  </div>
+</section>
+
+<!-- THE OFFERS -->
+<section class="section">
+  <h2 class="section-title">The Offers</h2>
+  <div class="section-sub">Two distinct promotional mechanics that hand off to each other on Cyber Monday.</div>
+
+  <div class="offer-grid">
+    <div class="offer-card">
+      <div class="phase-label">Phase 1 · BFCM Sitewide</div>
+      <h3>Sitewide Sale</h3>
+      <div class="offer-dates">Tue Nov 17 – Sun Nov 29, 2026 · Ends 11:59 PM</div>
+      <span class="exclusion-chip">Excludes Holiday Kits</span>
+      <div class="offer-tiers">
+        <div class="tier-row">
+          <div class="tier-pct">15%</div>
+          <div class="tier-desc">off sitewide — every order, no minimum</div>
+        </div>
+        <div class="tier-row">
+          <div class="tier-pct">20%</div>
+          <div class="tier-desc">off orders of <strong>$100+</strong></div>
+        </div>
+      </div>
+      <div class="offer-note"><strong>Minis join 11/27:</strong> limited-time Minis launch on Black Friday and count toward the sitewide discounts, same as any other eligible product, through the end of the sale on 11/29.</div>
+    </div>
+
+    <div class="offer-card">
+      <div class="phase-label">Phase 2 · Cyber Monday Onward</div>
+      <h3>Mini Bundle Savings</h3>
+      <div class="offer-dates">Mon Nov 30 – Thu Dec 31, 2026</div>
+      <span class="include-chip">Minis Only · Not a Blanket Discount</span>
+      <div class="offer-tiers">
+        <div class="tier-row">
+          <div class="tier-pct">15%</div>
+          <div class="tier-desc">off a Mini set of <strong>3</strong></div>
+        </div>
+        <div class="tier-row">
+          <div class="tier-pct">20%</div>
+          <div class="tier-desc">off a Mini set of <strong>5</strong></div>
+        </div>
+        <div class="tier-row">
+          <div class="tier-pct">25%</div>
+          <div class="tier-desc">off a Mini set of <strong>7</strong></div>
+        </div>
+      </div>
+      <div class="offer-note"><strong>Post–Cyber Week:</strong> the bundle savings don't end with Cyber Week — they stay live on the limited-time Minis through end of year (12/31/26).</div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="section">
+  <h2 class="section-title">Key Dates</h2>
+  <div class="section-sub">Every transition moment in the BFCM window.</div>
+
+  <div class="timeline">
+    <div class="tl-item key">
+      <div class="tl-date">Tue · Nov 17</div>
+      <div class="tl-title">Sitewide sale begins</div>
+      <div class="tl-desc">15% off sitewide, 20% off orders $100+. Holiday Kits excluded.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-date">Thu · Nov 26</div>
+      <div class="tl-title">Thanksgiving</div>
+      <div class="tl-desc"><span class="muted">Sitewide sale continues — no offer change.</span></div>
+    </div>
+    <div class="tl-item key">
+      <div class="tl-date">Fri · Nov 27 — Black Friday</div>
+      <div class="tl-title">Limited-time Minis launch</div>
+      <div class="tl-desc">Minis not normally available are introduced and sold. They are eligible for the sitewide discounts (15% / 20% $100+) while the sale runs.</div>
+    </div>
+    <div class="tl-item end">
+      <div class="tl-date">Sun · Nov 29 · 11:59 PM</div>
+      <div class="tl-title">Sitewide sale ends</div>
+      <div class="tl-desc">The 15% / 20% sitewide discounts come down at midnight.</div>
+    </div>
+    <div class="tl-item key">
+      <div class="tl-date">Mon · Nov 30 — Cyber Monday</div>
+      <div class="tl-title">Mini bundle savings begin</div>
+      <div class="tl-desc">No blanket discount. Minis go on tiered bundle pricing: 15% off a set of 3, 20% off a set of 5, 25% off a set of 7.</div>
+    </div>
+    <div class="tl-item end">
+      <div class="tl-date">Thu · Dec 31</div>
+      <div class="tl-title">Mini bundle savings end</div>
+      <div class="tl-desc">Bundle pricing on the limited-time Minis runs through end of year.</div>
+    </div>
+  </div>
+</section>
+
+<!-- DISCOUNT REFERENCE -->
+<section class="section">
+  <h2 class="section-title">Discount Reference</h2>
+  <div class="section-sub">What discount applies to what, in each window.</div>
+
+  <div class="pacing-card">
+    <table class="pacing-table">
+      <thead>
+        <tr>
+          <th>Window</th>
+          <th>Sitewide Products</th>
+          <th>Holiday Kits</th>
+          <th>Minis</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="t-window">Nov 17 – Nov 26
+            <span class="cell-sub">Sale, pre–Black Friday</span>
+          </td>
+          <td>15% off · 20% off at $100+</td>
+          <td><span class="no">Excluded</span></td>
+          <td><span class="cell-sub" style="margin-top:0;">Not yet available</span></td>
+        </tr>
+        <tr>
+          <td class="t-window">Nov 27 – Nov 29
+            <span class="cell-sub">Black Friday weekend</span>
+          </td>
+          <td>15% off · 20% off at $100+</td>
+          <td><span class="no">Excluded</span></td>
+          <td><span class="yes">Launch</span> — count toward sitewide 15% / 20% discounts</td>
+        </tr>
+        <tr>
+          <td class="t-window">Nov 30 – Dec 31
+            <span class="cell-sub">Cyber Monday → end of year</span>
+          </td>
+          <td>Full price — sale over</td>
+          <td>Full price</td>
+          <td><span class="bundle-pill">Bundle pricing</span> 15% off set of 3 · 20% off set of 5 · 25% off set of 7</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- NOTES -->
+<section class="section">
+  <h2 class="section-title">Notes &amp; Fine Print</h2>
+  <ul class="fine-list">
+    <li><span class="dot"></span><span><strong>Holiday Kits are excluded</strong> from the sitewide sale for its entire run (11/17–11/29).</span></li>
+    <li><span class="dot"></span><span><strong>Minis are limited-time.</strong> They are not part of the regular assortment — they launch Black Friday (11/27) and are sold for a limited time.</span></li>
+    <li><span class="dot"></span><span><strong>The offers hand off cleanly:</strong> sitewide discounts end Sunday 11/29 at 11:59 PM; Mini bundle pricing takes over on Cyber Monday 11/30. Minis never carry both mechanics at once.</span></li>
+    <li><span class="dot"></span><span><strong>Cyber Monday is not a blanket discount.</strong> The only offer from 11/30 onward is tiered Mini bundle savings (3 / 5 / 7 sets).</span></li>
+    <li><span class="dot"></span><span><strong>Bundle savings outlast Cyber Week</strong> — they remain live through 12/31/26.</span></li>
+  </ul>
+</section>
+
+<footer>
+  <strong>JRB Growth</strong> · BFCM 2026 offer structure · Internal reference — not customer-facing copy. Dates reflect the plan as of Aug 10, 2026.
+</footer>
+
+</body>
+</html>
