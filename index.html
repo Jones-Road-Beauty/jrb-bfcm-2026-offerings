@@ -116,6 +116,33 @@ h1 { font-family: 'Canela', serif; font-weight: 500; font-size: 40px; line-heigh
 .fine-list .dot { flex: none; width: 7px; height: 7px; border-radius: 50%; background: var(--jrb-gold); margin-top: 7px; }
 .fine-list strong { font-weight: 600; color: var(--jrb-forest); }
 
+/* CALENDAR */
+.cal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.cal-month { background: var(--jrb-paper); border: 1px solid var(--jrb-line); border-radius: 8px; padding: 18px 18px 20px; }
+.cal-month-title { font-family: 'Canela', serif; font-size: 21px; font-weight: 500; color: var(--jrb-forest); margin-bottom: 12px; }
+.cal-table { display: grid; grid-template-columns: repeat(7, 1fr); gap: 3px; }
+.cal-dow { font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--jrb-stone); font-weight: 700; text-align: center; padding: 2px 0 5px; }
+.cal-day { min-height: 58px; border-radius: 4px; background: var(--jrb-paper); border: 1px solid var(--jrb-line); padding: 4px 5px 5px; }
+.cal-day.empty { background: transparent; border: 0; }
+.cal-day.key { box-shadow: inset 0 0 0 1.5px var(--jrb-gold); border-color: var(--jrb-gold); }
+.cal-num { font-size: 11px; font-weight: 600; color: var(--jrb-ink); font-variant-numeric: tabular-nums; }
+.cal-bands { display: flex; flex-direction: column; gap: 2px; margin-top: 3px; }
+.cal-band { height: 5px; border-radius: 2px; }
+.band-sitewide { background: var(--jrb-forest); }
+.band-builder { background: var(--jrb-gold); }
+.band-gwp { background: var(--jrb-sage); }
+.cal-evt { font-size: 8.5px; line-height: 1.3; font-weight: 700; letter-spacing: 0.03em; text-transform: uppercase; color: var(--jrb-moss); margin-top: 3px; }
+.cal-evt.muted { color: var(--jrb-ash); }
+.cal-evt.ship { color: #B65A4E; }
+.cal-legend .dot-ship { width: 9px; height: 9px; border-radius: 50%; background: #B65A4E; display: inline-block; }
+.cal-legend { display: flex; gap: 18px; align-items: center; font-size: 12px; color: var(--jrb-stone); margin-top: 18px; flex-wrap: wrap; letter-spacing: 0.02em; }
+.cal-legend span { display: inline-flex; align-items: center; gap: 6px; }
+.cal-legend .sw { width: 16px; height: 6px; border-radius: 2px; display: inline-block; }
+.cal-legend .sw-key { width: 12px; height: 12px; border-radius: 3px; border: 1.5px solid var(--jrb-gold); display: inline-block; }
+@media (max-width: 860px) { .cal-grid { grid-template-columns: 1fr; } }
+@media (max-width: 570px) { .cal-day { min-height: 46px; padding: 3px 3px 4px; } .cal-evt { font-size: 7.5px; } .cal-month { padding: 12px 10px 14px; } }
+@media print { .cal-grid { grid-template-columns: 1fr 1fr; } }
+
 footer { margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--jrb-line); font-size: 12px; color: var(--jrb-stone); line-height: 1.6; }
 footer strong { color: var(--jrb-moss); font-weight: 600; letter-spacing: 0.04em; }
 
@@ -158,7 +185,7 @@ footer strong { color: var(--jrb-moss); font-weight: 600; letter-spacing: 0.04em
 <section class="section">
   <div class="summary-card">
     <div class="label">At a Glance</div>
-    <p>The <strong>sitewide sale runs Tue 11/17 through Cyber Monday (Mon 11/30) at 11:59 PM</strong> — 15% off everything, upgraded to 20% off on orders of $100+. <strong>Holiday Kits and all sets, bundles, and kits are excluded</strong> and do not count toward the $100 tier.</p>
+    <p>The season opens with the <strong>Holiday Kits launch on Thu 11/5</strong>. The <strong>sitewide sale runs Tue 11/17 through Cyber Monday (Mon 11/30) at 11:59 PM</strong> — 15% off everything, upgraded to 20% off on orders of $100+. <strong>Holiday Kits and all sets, bundles, and kits are excluded</strong> and do not count toward the $100 tier.</p>
     <p>On <strong>Tue 11/24</strong>, limited-time <strong>Minis</strong> launch with the <strong>Bundle Builder</strong> discount live from day one — 20% off a set of 3, 25% off a set of 5, 30% off a set of 7 — running through <strong>12/31/26</strong>. There is no window where Minis sell at full price. Buy <strong>5+ Minis</strong> and get a free <strong>Mini Travel Bag</strong> (also sold on its own through end of year).</p>
     <p>From <strong>12/3 through 12/17</strong>, a tiered gift-with-purchase runs: spend <strong>$85</strong> for a <strong>Reusable Eye Mask</strong>, spend <strong>$150</strong> for a <strong>Refillable Ring</strong> — and at $150 the tiers stack, so you get both.</p>
   </div>
@@ -185,6 +212,106 @@ footer strong { color: var(--jrb-moss); font-weight: 600; letter-spacing: 0.04em
         <span class="gantt-tick" style="left:100%;">Dec 31</span>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- CALENDAR -->
+<section class="section">
+  <h2 class="section-title">Calendar</h2>
+  <div class="section-sub">Everything across November and December — bands show which offers are live each day, outlined days are transition moments.</div>
+
+  <div class="cal-grid">
+    <div class="cal-month">
+      <div class="cal-month-title">November 2026</div>
+      <div class="cal-table">
+        <div class="cal-dow">Su</div><div class="cal-dow">Mo</div><div class="cal-dow">Tu</div><div class="cal-dow">We</div><div class="cal-dow">Th</div><div class="cal-dow">Fr</div><div class="cal-dow">Sa</div>
+        <div class="cal-day"><span class="cal-num">1</span></div>
+        <div class="cal-day"><span class="cal-num">2</span></div>
+        <div class="cal-day"><span class="cal-num">3</span></div>
+        <div class="cal-day"><span class="cal-num">4</span></div>
+        <div class="cal-day key"><span class="cal-num">5</span><div class="cal-evt">Holiday Kits launch</div></div>
+        <div class="cal-day"><span class="cal-num">6</span></div>
+        <div class="cal-day"><span class="cal-num">7</span></div>
+        <div class="cal-day"><span class="cal-num">8</span></div>
+        <div class="cal-day"><span class="cal-num">9</span></div>
+        <div class="cal-day"><span class="cal-num">10</span></div>
+        <div class="cal-day"><span class="cal-num">11</span></div>
+        <div class="cal-day"><span class="cal-num">12</span></div>
+        <div class="cal-day"><span class="cal-num">13</span></div>
+        <div class="cal-day"><span class="cal-num">14</span></div>
+        <div class="cal-day"><span class="cal-num">15</span></div>
+        <div class="cal-day"><span class="cal-num">16</span></div>
+        <div class="cal-day key"><span class="cal-num">17</span><div class="cal-bands"><div class="cal-band band-sitewide"></div></div><div class="cal-evt">Sitewide sale begins</div></div>
+        <div class="cal-day"><span class="cal-num">18</span><div class="cal-bands"><div class="cal-band band-sitewide"></div></div></div>
+        <div class="cal-day"><span class="cal-num">19</span><div class="cal-bands"><div class="cal-band band-sitewide"></div></div></div>
+        <div class="cal-day"><span class="cal-num">20</span><div class="cal-bands"><div class="cal-band band-sitewide"></div></div></div>
+        <div class="cal-day"><span class="cal-num">21</span><div class="cal-bands"><div class="cal-band band-sitewide"></div></div></div>
+        <div class="cal-day"><span class="cal-num">22</span><div class="cal-bands"><div class="cal-band band-sitewide"></div></div></div>
+        <div class="cal-day"><span class="cal-num">23</span><div class="cal-bands"><div class="cal-band band-sitewide"></div></div></div>
+        <div class="cal-day key"><span class="cal-num">24</span><div class="cal-bands"><div class="cal-band band-sitewide"></div><div class="cal-band band-builder"></div></div><div class="cal-evt">Minis + Bundle Builder launch</div></div>
+        <div class="cal-day"><span class="cal-num">25</span><div class="cal-bands"><div class="cal-band band-sitewide"></div><div class="cal-band band-builder"></div></div></div>
+        <div class="cal-day"><span class="cal-num">26</span><div class="cal-bands"><div class="cal-band band-sitewide"></div><div class="cal-band band-builder"></div></div><div class="cal-evt muted">Thanksgiving</div></div>
+        <div class="cal-day"><span class="cal-num">27</span><div class="cal-bands"><div class="cal-band band-sitewide"></div><div class="cal-band band-builder"></div></div><div class="cal-evt">Black Friday</div></div>
+        <div class="cal-day"><span class="cal-num">28</span><div class="cal-bands"><div class="cal-band band-sitewide"></div><div class="cal-band band-builder"></div></div></div>
+        <div class="cal-day"><span class="cal-num">29</span><div class="cal-bands"><div class="cal-band band-sitewide"></div><div class="cal-band band-builder"></div></div></div>
+        <div class="cal-day key"><span class="cal-num">30</span><div class="cal-bands"><div class="cal-band band-sitewide"></div><div class="cal-band band-builder"></div></div><div class="cal-evt">Cyber Monday · sale ends 11:59 PM</div></div>
+        <div class="cal-day empty"></div>
+        <div class="cal-day empty"></div>
+        <div class="cal-day empty"></div>
+        <div class="cal-day empty"></div>
+        <div class="cal-day empty"></div>
+      </div>
+    </div>
+
+    <div class="cal-month">
+      <div class="cal-month-title">December 2026</div>
+      <div class="cal-table">
+        <div class="cal-dow">Su</div><div class="cal-dow">Mo</div><div class="cal-dow">Tu</div><div class="cal-dow">We</div><div class="cal-dow">Th</div><div class="cal-dow">Fr</div><div class="cal-dow">Sa</div>
+        <div class="cal-day empty"></div>
+        <div class="cal-day empty"></div>
+        <div class="cal-day"><span class="cal-num">1</span><div class="cal-bands"><div class="cal-band band-builder"></div></div></div>
+        <div class="cal-day"><span class="cal-num">2</span><div class="cal-bands"><div class="cal-band band-builder"></div></div></div>
+        <div class="cal-day key"><span class="cal-num">3</span><div class="cal-bands"><div class="cal-band band-builder"></div><div class="cal-band band-gwp"></div></div><div class="cal-evt">Tiered GWP begins</div></div>
+        <div class="cal-day"><span class="cal-num">4</span><div class="cal-bands"><div class="cal-band band-builder"></div><div class="cal-band band-gwp"></div></div></div>
+        <div class="cal-day"><span class="cal-num">5</span><div class="cal-bands"><div class="cal-band band-builder"></div><div class="cal-band band-gwp"></div></div></div>
+        <div class="cal-day"><span class="cal-num">6</span><div class="cal-bands"><div class="cal-band band-builder"></div><div class="cal-band band-gwp"></div></div></div>
+        <div class="cal-day"><span class="cal-num">7</span><div class="cal-bands"><div class="cal-band band-builder"></div><div class="cal-band band-gwp"></div></div></div>
+        <div class="cal-day"><span class="cal-num">8</span><div class="cal-bands"><div class="cal-band band-builder"></div><div class="cal-band band-gwp"></div></div></div>
+        <div class="cal-day"><span class="cal-num">9</span><div class="cal-bands"><div class="cal-band band-builder"></div><div class="cal-band band-gwp"></div></div></div>
+        <div class="cal-day"><span class="cal-num">10</span><div class="cal-bands"><div class="cal-band band-builder"></div><div class="cal-band band-gwp"></div></div><div class="cal-evt ship">AU cutoff</div></div>
+        <div class="cal-day"><span class="cal-num">11</span><div class="cal-bands"><div class="cal-band band-builder"></div><div class="cal-band band-gwp"></div></div><div class="cal-evt ship">NZ cutoff</div></div>
+        <div class="cal-day"><span class="cal-num">12</span><div class="cal-bands"><div class="cal-band band-builder"></div><div class="cal-band band-gwp"></div></div></div>
+        <div class="cal-day"><span class="cal-num">13</span><div class="cal-bands"><div class="cal-band band-builder"></div><div class="cal-band band-gwp"></div></div></div>
+        <div class="cal-day"><span class="cal-num">14</span><div class="cal-bands"><div class="cal-band band-builder"></div><div class="cal-band band-gwp"></div></div><div class="cal-evt ship">Canada cutoff</div></div>
+        <div class="cal-day"><span class="cal-num">15</span><div class="cal-bands"><div class="cal-band band-builder"></div><div class="cal-band band-gwp"></div></div></div>
+        <div class="cal-day"><span class="cal-num">16</span><div class="cal-bands"><div class="cal-band band-builder"></div><div class="cal-band band-gwp"></div></div></div>
+        <div class="cal-day key"><span class="cal-num">17</span><div class="cal-bands"><div class="cal-band band-builder"></div><div class="cal-band band-gwp"></div></div><div class="cal-evt">Tiered GWP ends</div><div class="cal-evt ship">US · UK · EU cutoff</div></div>
+        <div class="cal-day"><span class="cal-num">18</span><div class="cal-bands"><div class="cal-band band-builder"></div></div><div class="cal-evt ship">Faster shipping cutoff</div></div>
+        <div class="cal-day"><span class="cal-num">19</span><div class="cal-bands"><div class="cal-band band-builder"></div></div><div class="cal-evt ship">Fastest shipping cutoff</div></div>
+        <div class="cal-day"><span class="cal-num">20</span><div class="cal-bands"><div class="cal-band band-builder"></div></div></div>
+        <div class="cal-day"><span class="cal-num">21</span><div class="cal-bands"><div class="cal-band band-builder"></div></div></div>
+        <div class="cal-day"><span class="cal-num">22</span><div class="cal-bands"><div class="cal-band band-builder"></div></div></div>
+        <div class="cal-day"><span class="cal-num">23</span><div class="cal-bands"><div class="cal-band band-builder"></div></div></div>
+        <div class="cal-day"><span class="cal-num">24</span><div class="cal-bands"><div class="cal-band band-builder"></div></div><div class="cal-evt muted">Deliver-by target</div></div>
+        <div class="cal-day"><span class="cal-num">25</span><div class="cal-bands"><div class="cal-band band-builder"></div></div><div class="cal-evt muted">Christmas</div></div>
+        <div class="cal-day"><span class="cal-num">26</span><div class="cal-bands"><div class="cal-band band-builder"></div></div></div>
+        <div class="cal-day"><span class="cal-num">27</span><div class="cal-bands"><div class="cal-band band-builder"></div></div></div>
+        <div class="cal-day"><span class="cal-num">28</span><div class="cal-bands"><div class="cal-band band-builder"></div></div></div>
+        <div class="cal-day"><span class="cal-num">29</span><div class="cal-bands"><div class="cal-band band-builder"></div></div></div>
+        <div class="cal-day"><span class="cal-num">30</span><div class="cal-bands"><div class="cal-band band-builder"></div></div></div>
+        <div class="cal-day key"><span class="cal-num">31</span><div class="cal-bands"><div class="cal-band band-builder"></div></div><div class="cal-evt">Bundle Builder + Travel Bag end</div></div>
+        <div class="cal-day empty"></div>
+        <div class="cal-day empty"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cal-legend">
+    <span><span class="sw" style="background:var(--jrb-forest);"></span>Sitewide sale · 15% / 20% $100+</span>
+    <span><span class="sw" style="background:var(--jrb-gold);"></span>Mini Bundle Builder · 20/25/30%</span>
+    <span><span class="sw" style="background:var(--jrb-sage);"></span>Tiered GWP · $85 mask / $150 ring</span>
+    <span><span class="sw-key"></span>Transition day</span>
+    <span><span class="dot-ship"></span>Holiday shipping cutoff · order by for 12/24 delivery</span>
   </div>
 </section>
 
@@ -263,6 +390,11 @@ footer strong { color: var(--jrb-moss); font-weight: 600; letter-spacing: 0.04em
 
   <div class="timeline">
     <div class="tl-item key">
+      <div class="tl-date">Thu · Nov 5</div>
+      <div class="tl-title">Holiday Kits launch</div>
+      <div class="tl-desc">Holiday Kits go live at full price. They stay excluded from the sitewide sale for its entire run and don't count toward its $100 tier.</div>
+    </div>
+    <div class="tl-item key">
       <div class="tl-date">Tue · Nov 17</div>
       <div class="tl-title">Sitewide sale begins</div>
       <div class="tl-desc">15% off sitewide, 20% off orders $100+. Holiday Kits and all sets, bundles, and kits are excluded and don't count toward the $100 tier.</div>
@@ -323,6 +455,15 @@ footer strong { color: var(--jrb-moss); font-weight: 600; letter-spacing: 0.04em
       </thead>
       <tbody>
         <tr>
+          <td class="t-window">Nov 5 – Nov 16
+            <span class="cell-sub">Pre-sale · Kits launch 11/5</span>
+          </td>
+          <td>Full price</td>
+          <td>Full price — Holiday Kits live from 11/5</td>
+          <td><span class="dim">Not yet available</span></td>
+          <td><span class="dim">—</span></td>
+        </tr>
+        <tr>
           <td class="t-window">Nov 17 – Nov 23
             <span class="cell-sub">Sale, pre-Minis</span>
           </td>
@@ -376,6 +517,7 @@ footer strong { color: var(--jrb-moss); font-weight: 600; letter-spacing: 0.04em
 <section class="section">
   <h2 class="section-title">Notes &amp; Fine Print</h2>
   <ul class="fine-list">
+    <li><span class="dot"></span><span><strong>Holiday Kits launch Thu 11/5</strong> at full price, ahead of the sale.</span></li>
     <li><span class="dot"></span><span><strong>Sets, bundles, and kits are fully outside the sitewide sale</strong> — including Holiday Kits and Mini bundles. They don't receive the 15% / 20% discounts and don't count toward reaching the $100 tier.</span></li>
     <li><span class="dot"></span><span><strong>Minis never sell at full price.</strong> They launch Tue 11/24 with Bundle Builder pricing live from day one, and the builder runs through 12/31/26.</span></li>
     <li><span class="dot"></span><span><strong>The offers overlap:</strong> from 11/24 through 11/30, the sitewide sale and the Bundle Builder run in parallel as separate mechanics — Minis are priced by the builder only.</span></li>
@@ -383,6 +525,7 @@ footer strong { color: var(--jrb-moss); font-weight: 600; letter-spacing: 0.04em
     <li><span class="dot"></span><span><strong>Tiered GWP (12/3–12/17) stacks at the top tier:</strong> $85 earns the Reusable Eye Mask, $150 earns the Refillable Ring plus the Eye Mask — a $150+ order gets both gifts.</span></li>
     <li><span class="dot"></span><span><strong>Mini bundle spend counts toward the GWP thresholds.</strong> Unlike the sitewide sale's $100 tier, the December $85 / $150 gift thresholds do include Mini Bundle Builder purchases.</span></li>
     <li><span class="dot"></span><span><strong>Sitewide sale timing is unchanged:</strong> Tue 11/17 through Cyber Monday 11/30 at 11:59 PM.</span></li>
+    <li><span class="dot"></span><span><strong>Holiday shipping cutoffs (order by, for delivery by 12/24):</strong> AU 12/10 · NZ 12/11 · Canada 12/14 · US (Reg + Haz, East &amp; West), UK &amp; EU 12/17 · Faster shipping 12/18 · Fastest shipping 12/19. Note the US standard cutoff lands on the same day the tiered GWP ends (12/17).</span></li>
   </ul>
 </section>
 
