@@ -44,26 +44,44 @@ h1 { font-family: 'Canela', serif; font-weight: 500; font-size: 40px; line-heigh
 .section-sub { font-size: 13px; color: var(--jrb-stone); margin-bottom: 24px; }
 
 /* OFFER CARDS */
-.offer-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-.offer-card { background: var(--jrb-paper); border: 1px solid var(--jrb-line); border-radius: 8px; padding: 26px 28px 28px; display: flex; flex-direction: column; }
+.offer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.offer-card { background: var(--jrb-paper); border: 1px solid var(--jrb-line); border-radius: 8px; padding: 24px 24px 26px; display: flex; flex-direction: column; }
 .offer-card .phase-label { font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--jrb-gold); font-weight: 700; margin-bottom: 10px; }
-.offer-card h3 { font-family: 'Canela', serif; font-size: 24px; font-weight: 500; color: var(--jrb-forest); margin-bottom: 4px; line-height: 1.2; }
-.offer-dates { font-size: 12px; color: var(--jrb-stone); letter-spacing: 0.06em; text-transform: uppercase; font-weight: 600; margin-bottom: 18px; }
-.offer-tiers { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
+.offer-card h3 { font-family: 'Canela', serif; font-size: 23px; font-weight: 500; color: var(--jrb-forest); margin-bottom: 4px; line-height: 1.2; }
+.offer-dates { font-size: 12px; color: var(--jrb-stone); letter-spacing: 0.06em; text-transform: uppercase; font-weight: 600; margin-bottom: 16px; }
+.offer-tiers { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
 .tier-row { display: flex; align-items: baseline; gap: 12px; padding: 10px 14px; background: var(--jrb-cream); border-radius: 6px; }
-.tier-pct { font-family: 'ArticulatCF', sans-serif; font-size: 26px; font-weight: 600; color: var(--jrb-forest); line-height: 1; font-variant-numeric: tabular-nums; min-width: 74px; }
+.tier-pct { font-family: 'ArticulatCF', sans-serif; font-size: 23px; font-weight: 600; color: var(--jrb-forest); line-height: 1; font-variant-numeric: tabular-nums; min-width: 66px; }
 .tier-desc { font-size: 13px; color: var(--jrb-ink); line-height: 1.4; }
 .offer-note { font-size: 12px; color: var(--jrb-stone); line-height: 1.55; margin-top: auto; padding-top: 8px; }
 .offer-note strong { color: var(--jrb-moss); font-weight: 600; }
+.offer-note + .offer-note { margin-top: 0; padding-top: 6px; }
 .exclusion-chip { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #B65A4E; background: rgba(182,90,78,0.10); border-radius: 4px; padding: 3px 9px; margin-bottom: 12px; align-self: flex-start; }
 .include-chip { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #15A85C; background: rgba(21,168,92,0.10); border-radius: 4px; padding: 3px 9px; margin-bottom: 12px; align-self: flex-start; }
+.gwp-chip { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--jrb-gold); background: rgba(46,140,158,0.12); border-radius: 4px; padding: 3px 9px; margin-bottom: 12px; align-self: flex-start; }
 
 /* SUMMARY CALLOUT */
 .summary-card { background: var(--jrb-cream); padding: 22px 24px; border-radius: 4px; border-left: 3px solid var(--jrb-forest); margin-bottom: 28px; }
 .summary-card .label { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--jrb-stone); margin-bottom: 8px; font-weight: 600; }
-.summary-card p { font-size: 14px; line-height: 1.6; color: var(--jrb-ink); max-width: 860px; }
+.summary-card p { font-size: 14px; line-height: 1.6; color: var(--jrb-ink); max-width: 900px; }
 .summary-card p + p { margin-top: 8px; }
 .summary-card strong { color: var(--jrb-forest); font-weight: 600; }
+
+/* GANTT PHASE CHART */
+.gantt { margin: 4px 0 8px; }
+.gantt-row { display: grid; grid-template-columns: 168px 1fr; align-items: center; gap: 14px; margin-bottom: 10px; }
+.gantt-label { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--jrb-forest); text-align: right; line-height: 1.35; }
+.gantt-label .gl-sub { display: block; font-size: 10px; font-weight: 500; letter-spacing: 0.04em; color: var(--jrb-stone); text-transform: none; }
+.gantt-track { position: relative; height: 34px; background: var(--jrb-cream); border-radius: 6px; }
+.gantt-bar { position: absolute; top: 4px; bottom: 4px; border-radius: 4px; display: flex; align-items: center; padding: 0 10px; font-size: 10px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: #fff; white-space: nowrap; overflow: hidden; }
+.gantt-bar.sitewide { background: var(--jrb-forest); }
+.gantt-bar.bundles { background: var(--jrb-gold); }
+.gantt-bar.gwp { background: var(--jrb-sage); }
+.gantt-axis { display: grid; grid-template-columns: 168px 1fr; gap: 14px; margin-top: 2px; }
+.gantt-axis-track { position: relative; height: 16px; }
+.gantt-tick { position: absolute; top: 0; font-size: 10px; color: var(--jrb-stone); letter-spacing: 0.06em; text-transform: uppercase; transform: translateX(-50%); white-space: nowrap; }
+.gantt-tick:first-child { transform: none; }
+.gantt-tick:last-child { transform: translateX(-100%); }
 
 /* TIMELINE */
 .timeline { position: relative; margin: 8px 0 4px; padding-left: 26px; }
@@ -78,31 +96,22 @@ h1 { font-family: 'Canela', serif; font-weight: 500; font-size: 40px; line-heigh
 .tl-desc { font-size: 13px; color: var(--jrb-ink); line-height: 1.55; max-width: 720px; }
 .tl-desc .muted { color: var(--jrb-stone); }
 
-/* PHASE BAR */
-.phase-bar { display: grid; grid-template-columns: 13fr 1fr 32fr; gap: 6px; margin: 4px 0 30px; }
-.phase-seg { border-radius: 6px; padding: 12px 14px 13px; }
-.phase-seg .ps-name { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 3px; }
-.phase-seg .ps-dates { font-size: 11px; opacity: 0.85; }
-.phase-seg.sitewide { background: var(--jrb-forest); color: var(--jrb-paper); }
-.phase-seg.gap { background: var(--jrb-soft); color: var(--jrb-stone); display: flex; align-items: center; justify-content: center; font-size: 14px; }
-.phase-seg.bundles { background: var(--jrb-gold); color: #fff; }
-.phase-overlay-note { font-size: 12px; color: var(--jrb-stone); margin-top: -20px; margin-bottom: 30px; line-height: 1.5; }
-
 /* REFERENCE TABLE */
-.pacing-card { background: var(--jrb-paper); border: 1px solid var(--jrb-line); border-radius: 8px; padding: 20px 24px 22px; }
-.pacing-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.pacing-card { background: var(--jrb-paper); border: 1px solid var(--jrb-line); border-radius: 8px; padding: 20px 24px 22px; overflow-x: auto; }
+.pacing-table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 860px; }
 .pacing-table thead th { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--jrb-stone); font-weight: 600; padding: 8px 14px 10px; border-bottom: 1px solid var(--jrb-line); text-align: left; }
 .pacing-table tbody td { padding: 12px 14px; border-bottom: 1px solid var(--jrb-line); text-align: left; vertical-align: top; line-height: 1.5; }
 .pacing-table tbody tr:last-child td { border-bottom: 0; }
 .pacing-table tbody tr:hover { background: var(--jrb-cream); }
 .pacing-table td.t-window { white-space: nowrap; font-weight: 600; color: var(--jrb-forest); }
-.pacing-table td .cell-sub { display: block; font-size: 12px; color: var(--jrb-stone); font-weight: 400; margin-top: 2px; }
+.pacing-table td .cell-sub { display: block; font-size: 11px; color: var(--jrb-stone); font-weight: 400; margin-top: 2px; }
 .yes { color: #15A85C; font-weight: 700; }
 .no { color: #B65A4E; font-weight: 700; }
-.bundle-pill { display: inline-block; padding: 2px 9px; border-radius: 100px; font-size: 12px; font-weight: 600; background: rgba(46,140,158,0.12); color: var(--jrb-gold); white-space: nowrap; }
+.dim { color: var(--jrb-stone); }
+.bundle-pill { display: inline-block; padding: 2px 9px; border-radius: 100px; font-size: 11px; font-weight: 600; background: rgba(46,140,158,0.12); color: var(--jrb-gold); white-space: nowrap; }
 
 /* FINE PRINT LIST */
-.fine-list { list-style: none; display: flex; flex-direction: column; gap: 12px; max-width: 860px; }
+.fine-list { list-style: none; display: flex; flex-direction: column; gap: 12px; max-width: 880px; }
 .fine-list li { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; line-height: 1.55; color: var(--jrb-ink); }
 .fine-list .dot { flex: none; width: 7px; height: 7px; border-radius: 50%; background: var(--jrb-gold); margin-top: 7px; }
 .fine-list strong { font-weight: 600; color: var(--jrb-forest); }
@@ -110,20 +119,23 @@ h1 { font-family: 'Canela', serif; font-weight: 500; font-size: 40px; line-heigh
 footer { margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--jrb-line); font-size: 12px; color: var(--jrb-stone); line-height: 1.6; }
 footer strong { color: var(--jrb-moss); font-weight: 600; letter-spacing: 0.04em; }
 
+@media (max-width: 980px) {
+  .offer-grid { grid-template-columns: 1fr; }
+}
 @media (max-width: 860px) {
   body { padding: 32px 22px 72px; }
-  .offer-grid { grid-template-columns: 1fr; }
-  .phase-bar { grid-template-columns: 1fr; }
   .header { flex-direction: column; align-items: flex-start; }
+  .gantt-row, .gantt-axis { grid-template-columns: 110px 1fr; gap: 10px; }
 }
 @media (max-width: 570px) {
   body { padding: 24px 16px 56px; }
   h1 { font-size: 30px; }
   .section-title { font-size: 24px; }
-  .tier-pct { font-size: 22px; min-width: 62px; }
-  .pacing-card { padding: 14px 12px 16px; overflow-x: auto; }
-  .pacing-table { min-width: 560px; }
+  .tier-pct { font-size: 20px; min-width: 58px; }
+  .pacing-card { padding: 14px 12px 16px; }
   .timeline { padding-left: 22px; }
+  .gantt-row, .gantt-axis { grid-template-columns: 84px 1fr; gap: 8px; }
+  .gantt-bar { padding: 0 6px; font-size: 9px; }
 }
 @media print {
   body { padding: 24px 28px; max-width: none; }
@@ -137,28 +149,41 @@ footer strong { color: var(--jrb-moss); font-weight: 600; letter-spacing: 0.04em
   <div>
     <div class="eyebrow">Jones Road Beauty · Internal</div>
     <h1>BFCM 2026 Offer Overview</h1>
-    <div class="subtitle">The complete promotional structure for Black Friday / Cyber Week 2026 — sitewide sale mechanics, the limited-time Minis launch, and the Mini bundle savings that carry through end of year.</div>
+    <div class="subtitle">The complete promotional structure for Black Friday / Cyber Week 2026 — the sitewide sale, the Mini Bundle Builder and its Travel Bag gift, and the December tiered gift-with-purchase.</div>
   </div>
-  <div class="last-updated">Updated Aug 10, 2026</div>
+  <div class="last-updated">Updated Aug 18, 2026</div>
 </header>
 
 <!-- AT A GLANCE -->
 <section class="section">
   <div class="summary-card">
     <div class="label">At a Glance</div>
-    <p>The <strong>sitewide sale runs Tue 11/17 through Cyber Monday (Mon 11/30) at 11:59 PM</strong> — 15% off everything, upgraded to 20% off on orders of $100+, with <strong>Holiday Kits excluded</strong>.</p>
-    <p>On <strong>Black Friday (11/27)</strong> we introduce limited-time <strong>Minis</strong>, which count toward the sitewide discounts. The day after Cyber Monday — <strong>Tue 12/1</strong> — Minis shift to <strong>bundle pricing</strong> — 15% off a set of 3, 20% off a set of 5, 25% off a set of 7 — which stays live through <strong>12/31/26</strong>.</p>
+    <p>The <strong>sitewide sale runs Tue 11/17 through Cyber Monday (Mon 11/30) at 11:59 PM</strong> — 15% off everything, upgraded to 20% off on orders of $100+. <strong>Holiday Kits and all sets, bundles, and kits are excluded</strong> and do not count toward the $100 tier.</p>
+    <p>On <strong>Tue 11/24</strong>, limited-time <strong>Minis</strong> launch with the <strong>Bundle Builder</strong> discount live from day one — 15% off a set of 3, 20% off a set of 5, 25% off a set of 7 — running through <strong>12/31/26</strong>. There is no window where Minis sell at full price. Buy <strong>5+ Minis</strong> and get a free <strong>Mini Travel Bag</strong> (also sold on its own through end of year).</p>
+    <p>From <strong>12/3 through 12/17</strong>, a tiered gift-with-purchase runs: spend <strong>$85</strong> for a <strong>Reusable Eye Mask</strong>, spend <strong>$100</strong> for a <strong>Refillable Ring</strong> — and at $100 the tiers stack, so you get both.</p>
   </div>
 
-  <div class="phase-bar">
-    <div class="phase-seg sitewide">
-      <div class="ps-name">Sitewide Sale</div>
-      <div class="ps-dates">Nov 17 – Nov 30 · 15% / 20% $100+</div>
+  <div class="gantt">
+    <div class="gantt-row">
+      <div class="gantt-label">Sitewide Sale<span class="gl-sub">15% / 20% $100+</span></div>
+      <div class="gantt-track"><div class="gantt-bar sitewide" style="left:0%; width:31.1%;">Nov 17 – 30</div></div>
     </div>
-    <div class="phase-seg gap" title="No gap — sale ends 11/30 at 11:59 PM, bundles begin 12/1">→</div>
-    <div class="phase-seg bundles">
-      <div class="ps-name">Mini Bundle Savings</div>
-      <div class="ps-dates">Dec 1 – Dec 31 · 15% / 20% / 25% by set size</div>
+    <div class="gantt-row">
+      <div class="gantt-label">Mini Bundle Builder<span class="gl-sub">15/20/25% · 3/5/7 sets</span></div>
+      <div class="gantt-track"><div class="gantt-bar bundles" style="left:15.6%; width:84.4%;">Nov 24 – Dec 31</div></div>
+    </div>
+    <div class="gantt-row">
+      <div class="gantt-label">Tiered GWP<span class="gl-sub">$85 mask · $100 ring</span></div>
+      <div class="gantt-track"><div class="gantt-bar gwp" style="left:35.6%; width:33.3%;">Dec 3 – 17</div></div>
+    </div>
+    <div class="gantt-axis">
+      <div></div>
+      <div class="gantt-axis-track">
+        <span class="gantt-tick" style="left:0%;">Nov 17</span>
+        <span class="gantt-tick" style="left:31.1%;">Nov 30</span>
+        <span class="gantt-tick" style="left:68.9%;">Dec 17</span>
+        <span class="gantt-tick" style="left:100%;">Dec 31</span>
+      </div>
     </div>
   </div>
 </section>
@@ -166,14 +191,14 @@ footer strong { color: var(--jrb-moss); font-weight: 600; letter-spacing: 0.04em
 <!-- THE OFFERS -->
 <section class="section">
   <h2 class="section-title">The Offers</h2>
-  <div class="section-sub">Two distinct promotional mechanics that hand off to each other the day after Cyber Monday.</div>
+  <div class="section-sub">Three mechanics that overlap — the Gantt above shows when each is live.</div>
 
   <div class="offer-grid">
     <div class="offer-card">
-      <div class="phase-label">Phase 1 · BFCM Sitewide</div>
+      <div class="phase-label">Offer 1 · BFCM Sitewide</div>
       <h3>Sitewide Sale</h3>
-      <div class="offer-dates">Tue Nov 17 – Mon Nov 30, 2026 · Ends 11:59 PM Cyber Monday</div>
-      <span class="exclusion-chip">Excludes Holiday Kits</span>
+      <div class="offer-dates">Tue Nov 17 – Mon Nov 30 · Ends 11:59 PM Cyber Monday</div>
+      <span class="exclusion-chip">Excludes Holiday Kits + All Sets / Bundles / Kits</span>
       <div class="offer-tiers">
         <div class="tier-row">
           <div class="tier-pct">15%</div>
@@ -184,14 +209,14 @@ footer strong { color: var(--jrb-moss); font-weight: 600; letter-spacing: 0.04em
           <div class="tier-desc">off orders of <strong>$100+</strong></div>
         </div>
       </div>
-      <div class="offer-note"><strong>Minis join 11/27:</strong> limited-time Minis launch on Black Friday and count toward the sitewide discounts, same as any other eligible product, through the end of the sale on 11/30.</div>
+      <div class="offer-note"><strong>Exclusions count for the tier too:</strong> sets, bundles, and kits don't receive the discount and don't count toward reaching the $100 tier.</div>
     </div>
 
     <div class="offer-card">
-      <div class="phase-label">Phase 2 · Post–Cyber Monday</div>
-      <h3>Mini Bundle Savings</h3>
-      <div class="offer-dates">Tue Dec 1 – Thu Dec 31, 2026</div>
-      <span class="include-chip">Minis Only · Not a Blanket Discount</span>
+      <div class="phase-label">Offer 2 · Minis Launch</div>
+      <h3>Mini Bundle Builder</h3>
+      <div class="offer-dates">Tue Nov 24 – Thu Dec 31, 2026</div>
+      <span class="gwp-chip">5+ Minis = Free Mini Travel Bag</span>
       <div class="offer-tiers">
         <div class="tier-row">
           <div class="tier-pct">15%</div>
@@ -206,7 +231,26 @@ footer strong { color: var(--jrb-moss); font-weight: 600; letter-spacing: 0.04em
           <div class="tier-desc">off a Mini set of <strong>7</strong></div>
         </div>
       </div>
-      <div class="offer-note"><strong>Post–Cyber Week:</strong> the bundle savings don't end with Cyber Week — they stay live on the limited-time Minis through end of year (12/31/26).</div>
+      <div class="offer-note"><strong>No full-price window:</strong> limited-time Minis launch 11/24 with Bundle Builder pricing live from day one. Mini bundles don't count toward the sitewide sale or its $100 tier.</div>
+      <div class="offer-note"><strong>Mini Travel Bag:</strong> free with 5+ Minis, and also available for purchase on its own through end of year.</div>
+    </div>
+
+    <div class="offer-card">
+      <div class="phase-label">Offer 3 · December</div>
+      <h3>Tiered Gift with Purchase</h3>
+      <div class="offer-dates">Thu Dec 3 – Thu Dec 17, 2026</div>
+      <span class="include-chip">Tiers Stack at $100</span>
+      <div class="offer-tiers">
+        <div class="tier-row">
+          <div class="tier-pct">$85</div>
+          <div class="tier-desc">free <strong>Reusable Eye Mask</strong></div>
+        </div>
+        <div class="tier-row">
+          <div class="tier-pct">$100</div>
+          <div class="tier-desc">free <strong>Refillable Ring</strong> — plus the Eye Mask (both gifts)</div>
+        </div>
+      </div>
+      <div class="offer-note"><strong>Stacking:</strong> a $100+ order earns both gifts — the ring doesn't replace the eye mask.</div>
     </div>
   </div>
 </section>
@@ -220,32 +264,42 @@ footer strong { color: var(--jrb-moss); font-weight: 600; letter-spacing: 0.04em
     <div class="tl-item key">
       <div class="tl-date">Tue · Nov 17</div>
       <div class="tl-title">Sitewide sale begins</div>
-      <div class="tl-desc">15% off sitewide, 20% off orders $100+. Holiday Kits excluded.</div>
+      <div class="tl-desc">15% off sitewide, 20% off orders $100+. Holiday Kits and all sets, bundles, and kits are excluded and don't count toward the $100 tier.</div>
+    </div>
+    <div class="tl-item key">
+      <div class="tl-date">Tue · Nov 24</div>
+      <div class="tl-title">Minis launch + Bundle Builder begins</div>
+      <div class="tl-desc">Limited-time Minis go live with Bundle Builder pricing from day one: 15% off a set of 3, 20% off a set of 5, 25% off a set of 7. Buy 5+ Minis for a free Mini Travel Bag; the bag also goes on sale as a standalone purchase. Mini bundles don't count toward the sitewide sale.</div>
     </div>
     <div class="tl-item">
       <div class="tl-date">Thu · Nov 26</div>
       <div class="tl-title">Thanksgiving</div>
-      <div class="tl-desc"><span class="muted">Sitewide sale continues — no offer change.</span></div>
+      <div class="tl-desc"><span class="muted">Sitewide sale and Bundle Builder both continue — no offer change.</span></div>
     </div>
-    <div class="tl-item key">
+    <div class="tl-item">
       <div class="tl-date">Fri · Nov 27 — Black Friday</div>
-      <div class="tl-title">Limited-time Minis launch</div>
-      <div class="tl-desc">Minis not normally available are introduced and sold. They are eligible for the sitewide discounts (15% / 20% $100+) while the sale runs.</div>
+      <div class="tl-title">Peak weekend begins</div>
+      <div class="tl-desc"><span class="muted">No mechanic change — sitewide sale and Bundle Builder both running.</span></div>
     </div>
     <div class="tl-item end">
       <div class="tl-date">Mon · Nov 30 — Cyber Monday · 11:59 PM</div>
       <div class="tl-title">Sitewide sale ends</div>
-      <div class="tl-desc">Cyber Monday is the final day of the sitewide sale — the 15% / 20% discounts come down at 11:59 PM.</div>
+      <div class="tl-desc">Cyber Monday is the final day of the sitewide sale — the 15% / 20% discounts come down at 11:59 PM. The Bundle Builder continues.</div>
     </div>
     <div class="tl-item key">
-      <div class="tl-date">Tue · Dec 1</div>
-      <div class="tl-title">Mini bundle savings begin</div>
-      <div class="tl-desc">No blanket discount. Minis go on tiered bundle pricing: 15% off a set of 3, 20% off a set of 5, 25% off a set of 7.</div>
+      <div class="tl-date">Thu · Dec 3</div>
+      <div class="tl-title">Tiered GWP begins</div>
+      <div class="tl-desc">Spend $85 for a free Reusable Eye Mask; spend $100 for a free Refillable Ring. At $100+ the tiers stack — both gifts.</div>
+    </div>
+    <div class="tl-item end">
+      <div class="tl-date">Thu · Dec 17</div>
+      <div class="tl-title">Tiered GWP ends</div>
+      <div class="tl-desc">Last day for the Eye Mask / Refillable Ring gifts.</div>
     </div>
     <div class="tl-item end">
       <div class="tl-date">Thu · Dec 31</div>
-      <div class="tl-title">Mini bundle savings end</div>
-      <div class="tl-desc">Bundle pricing on the limited-time Minis runs through end of year.</div>
+      <div class="tl-title">Bundle Builder + Travel Bag end</div>
+      <div class="tl-desc">Mini Bundle Builder pricing, the 5+ Mini Travel Bag gift, and standalone Travel Bag availability all run through end of year.</div>
     </div>
   </div>
 </section>
@@ -253,7 +307,7 @@ footer strong { color: var(--jrb-moss); font-weight: 600; letter-spacing: 0.04em
 <!-- DISCOUNT REFERENCE -->
 <section class="section">
   <h2 class="section-title">Discount Reference</h2>
-  <div class="section-sub">What discount applies to what, in each window.</div>
+  <div class="section-sub">What's live in each window.</div>
 
   <div class="pacing-card">
     <table class="pacing-table">
@@ -261,34 +315,56 @@ footer strong { color: var(--jrb-moss); font-weight: 600; letter-spacing: 0.04em
         <tr>
           <th>Window</th>
           <th>Sitewide Products</th>
-          <th>Holiday Kits</th>
+          <th>Sets · Bundles · Kits</th>
           <th>Minis</th>
+          <th>Gifts with Purchase</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td class="t-window">Nov 17 – Nov 26
-            <span class="cell-sub">Sale, pre–Black Friday</span>
+          <td class="t-window">Nov 17 – Nov 23
+            <span class="cell-sub">Sale, pre-Minis</span>
           </td>
           <td>15% off · 20% off at $100+</td>
-          <td><span class="no">Excluded</span></td>
-          <td><span class="cell-sub" style="margin-top:0;">Not yet available</span></td>
+          <td><span class="no">Excluded</span> — no discount, don't count toward $100 tier</td>
+          <td><span class="dim">Not yet available</span></td>
+          <td><span class="dim">—</span></td>
         </tr>
         <tr>
-          <td class="t-window">Nov 27 – Nov 30
-            <span class="cell-sub">Black Friday → Cyber Monday</span>
+          <td class="t-window">Nov 24 – Nov 30
+            <span class="cell-sub">Overlap: sale + Bundle Builder</span>
           </td>
           <td>15% off · 20% off at $100+</td>
-          <td><span class="no">Excluded</span></td>
-          <td><span class="yes">Launch</span> — count toward sitewide 15% / 20% discounts</td>
+          <td><span class="no">Excluded</span> — no discount, don't count toward $100 tier</td>
+          <td><span class="bundle-pill">Bundle Builder</span> 15% / 20% / 25% off sets of 3 / 5 / 7 · outside the sitewide sale</td>
+          <td>Mini Travel Bag free with 5+ Minis</td>
         </tr>
         <tr>
-          <td class="t-window">Dec 1 – Dec 31
-            <span class="cell-sub">Post–Cyber Monday → end of year</span>
+          <td class="t-window">Dec 1 – Dec 2
+            <span class="cell-sub">Post-sale</span>
           </td>
           <td>Full price — sale over</td>
           <td>Full price</td>
-          <td><span class="bundle-pill">Bundle pricing</span> 15% off set of 3 · 20% off set of 5 · 25% off set of 7</td>
+          <td><span class="bundle-pill">Bundle Builder</span> 15% / 20% / 25% off sets of 3 / 5 / 7</td>
+          <td>Mini Travel Bag free with 5+ Minis</td>
+        </tr>
+        <tr>
+          <td class="t-window">Dec 3 – Dec 17
+            <span class="cell-sub">Tiered GWP window</span>
+          </td>
+          <td>Full price</td>
+          <td>Full price</td>
+          <td><span class="bundle-pill">Bundle Builder</span> 15% / 20% / 25% off sets of 3 / 5 / 7</td>
+          <td>Travel Bag with 5+ Minis · Eye Mask at $85 · Refillable Ring at $100 (stacks — both at $100)</td>
+        </tr>
+        <tr>
+          <td class="t-window">Dec 18 – Dec 31
+            <span class="cell-sub">Through end of year</span>
+          </td>
+          <td>Full price</td>
+          <td>Full price</td>
+          <td><span class="bundle-pill">Bundle Builder</span> 15% / 20% / 25% off sets of 3 / 5 / 7</td>
+          <td>Mini Travel Bag free with 5+ Minis</td>
         </tr>
       </tbody>
     </table>
@@ -299,16 +375,17 @@ footer strong { color: var(--jrb-moss); font-weight: 600; letter-spacing: 0.04em
 <section class="section">
   <h2 class="section-title">Notes &amp; Fine Print</h2>
   <ul class="fine-list">
-    <li><span class="dot"></span><span><strong>Holiday Kits are excluded</strong> from the sitewide sale for its entire run (11/17–11/30).</span></li>
-    <li><span class="dot"></span><span><strong>Minis are limited-time.</strong> They are not part of the regular assortment — they launch Black Friday (11/27) and are sold for a limited time.</span></li>
-    <li><span class="dot"></span><span><strong>The offers hand off cleanly:</strong> sitewide discounts run through 11:59 PM on Cyber Monday (11/30); Mini bundle pricing takes over the next day, Tuesday 12/1. Minis never carry both mechanics at once.</span></li>
-    <li><span class="dot"></span><span><strong>Cyber Monday is a sitewide sale day, not a bundle day.</strong> The tiered Mini bundle savings (3 / 5 / 7 sets) don't begin until 12/1 — from then on they are the only offer running.</span></li>
-    <li><span class="dot"></span><span><strong>Bundle savings outlast Cyber Week</strong> — they remain live 12/1 through 12/31/26.</span></li>
+    <li><span class="dot"></span><span><strong>Sets, bundles, and kits are fully outside the sitewide sale</strong> — including Holiday Kits and Mini bundles. They don't receive the 15% / 20% discounts and don't count toward reaching the $100 tier.</span></li>
+    <li><span class="dot"></span><span><strong>Minis never sell at full price.</strong> They launch Tue 11/24 with Bundle Builder pricing live from day one, and the builder runs through 12/31/26.</span></li>
+    <li><span class="dot"></span><span><strong>The offers overlap:</strong> from 11/24 through 11/30, the sitewide sale and the Bundle Builder run in parallel as separate mechanics — Minis are priced by the builder only.</span></li>
+    <li><span class="dot"></span><span><strong>Mini Travel Bag, two ways:</strong> free as a GWP on any 5+ Mini purchase, and available as a standalone purchase — both through end of year.</span></li>
+    <li><span class="dot"></span><span><strong>Tiered GWP (12/3–12/17) stacks at the top tier:</strong> $85 earns the Reusable Eye Mask, $100 earns the Refillable Ring plus the Eye Mask — a $100+ order gets both gifts.</span></li>
+    <li><span class="dot"></span><span><strong>Sitewide sale timing is unchanged:</strong> Tue 11/17 through Cyber Monday 11/30 at 11:59 PM.</span></li>
   </ul>
 </section>
 
 <footer>
-  <strong>JRB Growth</strong> · BFCM 2026 offer structure · Internal reference — not customer-facing copy. Dates reflect the plan as of Aug 10, 2026.
+  <strong>JRB Growth</strong> · BFCM 2026 offer structure · Internal reference — not customer-facing copy. Dates reflect the plan as of Aug 18, 2026.
 </footer>
 
 </body>
